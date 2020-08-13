@@ -1,7 +1,7 @@
 ///////////////Menu Items (MVP)///////////////////
 
 const latte = {name: "Cafe Latte", price: 4, category: "Drinks"};
-//const burger = {name: "Burger", price: 18, category: "Lunch"};
+let burger = {name: "Burger", price: 18, category: "Lunch"}; //changed from const to let to allow me to add the method to burger later
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
 
 /* Task 1a: write a function to return more menu items with the same format as the items above. */
@@ -12,9 +12,9 @@ function createMenuItem(name, cost, category){
 
 /* Task 1b: use your function to create 3 more menu items. You may add any items to the menu that you'd like */
 
-console.log(createMenuItem("Cheese Danish", 3, "Breakfast"));
-console.log(createMenuItem("Curry", 10, "Dinner"));
-console.log(createMenuItem("Popcorn", 2, "Snack"));
+//console.log(createMenuItem("Cheese Danish", 3, "Breakfast"));
+//console.log(createMenuItem("Curry", 10, "Dinner"));
+//console.log(createMenuItem("Popcorn", 2, "Snack"));
 
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
@@ -26,12 +26,12 @@ and should return a number.
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
 
-const burger = {
+burger = {
   name: "Burger",  
   category: "Lunch",
   price: 18,
-  discountPrice: function(person){
-    let droppedPrice;
+  discountPrice: function(person){                          //Created a method called discountPrice
+    let droppedPrice;                                       
     if(person === "teacher" || person === "student"){
       droppedPrice = burger.price * .75;
     }else if(person === "public"){
@@ -66,11 +66,13 @@ function addReview (array, name, rating, feedback){
   return array;
 }
 
-//console.log(addReview(reviews, "Fatima", 4, "The food was pretty good, if not a bit overpriced. Worth it for a day out!"));
+console.log(addReview(reviews, "Fatima", 4, "The food was pretty good, if not a bit overpriced. Worth it for a day out!"));
 
 /* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays" */
 
 reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays";
+
+console.log(reviews[7].feedback);
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
